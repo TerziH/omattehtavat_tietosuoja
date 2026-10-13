@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Omat tehtävät – tietosuojaseloste</title>
+<style>
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6;max-width:42rem;margin:0 auto;padding:1.5rem 1rem 3rem;color:#1b1b1f;background:#fff}
+  h1{font-size:1.7rem;margin-bottom:.2rem}
+  h2{font-size:1.2rem;margin-top:2rem}
+  .meta{color:#555}
+  a{color:#1a5fd6}
+  @media (prefers-color-scheme:dark){body{background:#121316;color:#e4e4e8}.meta{color:#aaa}a{color:#8ab4ff}}
+</style>
+</head>
+<body>
+<h1>Omat tehtävät – tietosuojaseloste</h1>
+<p class="meta">Viimeksi päivitetty: 13.10.2026 · <a href="#en">English summary below</a></p>
+
+<p>Omat tehtävät on Android-sovellus, jolla voit hallita omia tehtäviäsi ja pitää ne synkronoituna omien laitteidesi välillä. Tämä seloste kertoo, mitä tietoja sovellus käsittelee ja miksi.</p>
+
+<h2>Rekisterinpitäjä ja yhteystiedot</h2>
+<p>Tero Lahtinen<br><a href="mailto:tero.lahtinen69@gmail.com">tero.lahtinen69@gmail.com</a></p>
+
+<h2>Mitä tietoja käsittelemme</h2>
+<p><strong>Google-tilin tiedot.</strong> Kun kirjaudut sovellukseen Google-tilillä, sovellus saa Firebase Authentication -palvelun kautta tilisi yksilöivän tunnuksen, sähköpostiosoitteen ja nimen. Tunnusta käytetään sen varmistamiseen, että näet vain omat tehtäväsi. Sähköpostiosoite näytetään sinulle sovelluksessa kirjautumistilan merkiksi.</p>
+<p><strong>Tehtävät.</strong> Sovellus tallentaa luomasi tehtävät: otsikon, kuvauksen, eräpäivän, toiston, osion, valmiustilan sekä luonti- ja muokkausajan. Tehtävät tallennetaan laitteellesi ja Google Cloud Firestore -tietokantaan, jotta ne voidaan synkronoida laitteidesi välillä.</p>
+<p><strong>Muistutukset.</strong> Päivittäinen muistutus ajastetaan ja luodaan kokonaan laitteellasi. Muistutuksen asetus (päällä tai pois ja kellonaika) tallentuu vain laitteelle.</p>
+
+<h2>Mitä emme tee</h2>
+<ul>
+<li>Sovellus ei sisällä mainoksia.</li>
+<li>Sovellus ei käytä analytiikka- tai seurantapalveluita.</li>
+<li>Emme myy tai luovuta tietojasi kolmansille osapuolille markkinointitarkoituksiin.</li>
+<li>Tehtäväsi ovat nähtävissä vain sinulle. Tietokannan säännöt estävät muita käyttäjiä lukemasta tai muokkaamasta niitä.</li>
+</ul>
+
+<h2>Käytetyt palvelut</h2>
+<p>Tietoja käsittelevät Googlen palvelut, jotka toimivat henkilötietojen käsittelijöinä:</p>
+<ul>
+<li>Firebase Authentication (kirjautuminen)</li>
+<li>Cloud Firestore (tehtävien tallennus ja synkronointi)</li>
+</ul>
+<p>Googlen tietosuojakäytännöt: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a> ja <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>. Tiedot siirtyvät laitteen ja palvelun välillä salattua yhteyttä käyttäen.</p>
+
+<h2>Tietojen säilytys ja poistaminen</h2>
+<p>Tehtäväsi säilyvät, kunnes poistat ne tai pyydät tietojesi poistoa. Voit poistaa yksittäisiä tehtäviä sovelluksessa. Voit pyytää kaikkien tietojesi (tilitunnus ja tehtävät) poistamista lähettämällä viestin yllä olevaan sähköpostiosoitteeseen. Poistamme tiedot viimeistään 30 päivän kuluessa pyynnöstä.</p>
+<p>Laitteelle tallennetut tiedot poistuvat, kun poistat sovelluksen tai sen tiedot laitteelta.</p>
+
+<h2>Oikeutesi</h2>
+<p>Sinulla on EU:n yleisen tietosuoja-asetuksen mukaan oikeus tarkastaa itseäsi koskevat tiedot, oikaista niitä, pyytää niiden poistamista ja siirtää ne toiseen järjestelmään. Voit myös tehdä valituksen tietosuojavaltuutetulle (<a href="https://tietosuoja.fi">tietosuoja.fi</a>).</p>
+
+<h2>Lapset</h2>
+<p>Sovellus ei ole tarkoitettu alle 13-vuotiaille, emmekä tietoisesti kerää heidän tietojaan.</p>
+
+<h2>Muutokset</h2>
+<p>Jos tätä selostetta muutetaan olennaisesti, päivitämme viimeisimmän päivityksen päivämäärän tälle sivulle.</p>
+
+<hr>
+
+<div id="en" lang="en">
+<h1>My Tasks – privacy policy (summary)</h1>
+<p class="meta">Last updated: 13 October 2026</p>
+<p>My Tasks (Omat tehtävät) is an Android to-do app. Controller and contact: Tero Lahtinen, <a href="mailto:tero.lahtinen69@gmail.com">tero.lahtinen69@gmail.com</a>.</p>
+<ul>
+<li><strong>Data we process:</strong> when you sign in with Google, Firebase Authentication provides a unique account ID, your email address and name. Your tasks (title, description, due date, repeat, section, done state, timestamps) are stored on your device and in Google Cloud Firestore so they can sync between your devices.</li>
+<li><strong>Reminders</strong> are scheduled and shown entirely on your device.</li>
+<li><strong>No ads, no analytics, no tracking.</strong> We do not sell or share your data for marketing. Your tasks are visible only to you.</li>
+<li><strong>Processors:</strong> Google (Firebase Authentication, Cloud Firestore). Data is encrypted in transit.</li>
+<li><strong>Deletion:</strong> you can delete individual tasks in the app. To delete your account and all your data, email the address above; we delete the data within 30 days.</li>
+<li><strong>Children:</strong> the app is not intended for children under 13.</li>
+</ul>
+</div>
+</body>
+</html>
