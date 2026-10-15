@@ -3,90 +3,188 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Omat tehtävät – tietosuojaseloste</title>
+<title>Kotivarasto – tietosuojaseloste</title>
 <style>
   body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6;max-width:42rem;margin:0 auto;padding:1.5rem 1rem 3rem;color:#1b1b1f;background:#fff}
   h1{font-size:1.7rem;margin-bottom:.2rem}
   h2{font-size:1.2rem;margin-top:2rem}
   .meta{color:#555}
   a{color:#1a5fd6}
-  @media (prefers-color-scheme:dark){body{background:#121316;color:#e4e4e8}.meta{color:#aaa}a{color:#8ab4ff}}
+  .table-wrap{overflow-x:auto}
+  table{border-collapse:collapse;width:100%;min-width:34rem;font-size:.95rem}
+  th,td{text-align:left;vertical-align:top;padding:.5rem .6rem;border-bottom:1px solid #ccc}
+  @media (prefers-color-scheme:dark){body{background:#121316;color:#e4e4e8}.meta{color:#aaa}a{color:#8ab4ff}th,td{border-bottom-color:#3a3c42}}
 </style>
 </head>
 <body>
-<h1 id="top">Omat tehtävät – tietosuojaseloste</h1>
-<p class="meta">Viimeksi päivitetty: 15.10.2026 · <a href="#en">English</a> · <a href="#es">Español</a></p>
+<h1 id="top">Kotivarasto – tietosuojaseloste</h1>
+<p class="meta">Päivitetty 15.10.2026 · <a href="#en">English</a> · <a href="poisto.html">Tietojen poisto</a></p>
 
-<p>Omat tehtävät on Android-sovellus, jolla voit hallita omia tehtäviäsi ja pitää ne synkronoituna omien laitteidesi välillä. Tämä seloste kertoo, mitä tietoja sovellus käsittelee ja miksi.</p>
-
-<h2>Rekisterinpitäjä ja yhteystiedot</h2>
-<p>Tero Lahtinen<br><a href="mailto:tero.lahtinen69@gmail.com">tero.lahtinen69@gmail.com</a></p>
-
-<h2>Mitä tietoja käsittelemme</h2>
-<p><strong>Google-tilin tiedot.</strong> Kun kirjaudut sovellukseen Google-tilillä, sovellus saa Firebase Authentication -palvelun kautta tilisi yksilöivän tunnuksen, sähköpostiosoitteen ja nimen. Tunnusta käytetään sen varmistamiseen, että näet vain omat tehtäväsi. Sähköpostiosoite näytetään sinulle sovelluksessa kirjautumistilan merkiksi.</p>
-<p><strong>Tehtävät.</strong> Sovellus tallentaa luomasi tehtävät: otsikon, kuvauksen, eräpäivän, toiston, osion, valmiustilan sekä luonti- ja muokkausajan. Tehtävät tallennetaan laitteellesi ja Google Cloud Firestore -tietokantaan, jotta ne voidaan synkronoida laitteidesi välillä.</p>
-<p><strong>Muistutukset.</strong> Päivittäinen muistutus ajastetaan ja luodaan kokonaan laitteellasi. Muistutuksen asetus (päällä tai pois ja kellonaika) tallentuu vain laitteelle.</p>
-
-<h2>Mitä emme tee</h2>
+<p>Kotivarasto on Android- ja Wear OS -sovellus kodin tarvikkeiden varastoon ja ostoslistaan. Tässä selosteessa kerrotaan, mitä tietoja sovellus käsittelee, miksi ja mitä voit tehdä tiedoillesi.</p>
+<h2>1. Rekisterinpitäjä</h2>
+<p>Tero Lahtinen<br/>Sähköposti: <a href="mailto:tero.lahtinen69@gmail.com">tero.lahtinen69@gmail.com</a></p>
+<p>Kotivarasto on yksityishenkilön kehittämä sovellus.</p>
+<h2>2. Mitä tietoja käsittelemme</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Tieto</th><th>Mihin käytetään</th><th>Missä säilyy</th></tr></thead>
+<tbody>
+<tr>
+<td><strong>Anonyymi käyttäjätunniste</strong></td>
+<td>Sovellus luo sen automaattisesti ensimmäisellä käynnistyksellä, eikä sinun tarvitse antaa mitään tietoja. Se tunnistaa sinut, jotta varastosi ja ostoslistasi pysyvät sinulla. Kello saa oman anonyymin tunnisteensa.</td>
+<td>Firebase Authentication</td>
+</tr>
+<tr>
+<td><strong>Google-tilin sähköpostiosoite</strong> (vain jos kirjaudut Google-tilillä; kirjautuminen on valinnaista)</td>
+<td>Yhdistää tunnisteesi Google-tiliin, jotta tietosi palautuvat uudelleenasennuksen tai puhelimen vaihdon jälkeen. Sovellus näyttää osoitteen vain sinulle. Firebase Authentication voi tallentaa kirjautumisen yhteydessä myös muita Googlen antamia profiilitietoja (esim. nimen ja profiilikuvan); sovellus ei käytä niitä.</td>
+<td>Firebase Authentication</td>
+</tr>
+<tr>
+<td><strong>Itse kirjoittamasi sisältö</strong>: varastojen ja ostoslistojen nimet, tuotteet, määrät, yksiköt, tuoteryhmät, minimimäärät sekä ostettujen tuotteiden nimet (ehdotuksia varten)</td>
+<td>Sovelluksen toiminta ja tietojen synkronointi laitteidesi ja jakamiesi jäsenten välillä.</td>
+<td>Cloud Firestore</td>
+</tr>
+<tr>
+<td><strong>Jakamistiedot</strong>: varaston tai ostoslistan 6-merkkinen koodi, jäsenten anonyymit tunnisteet, omistaja ja valitsemasi varasto ja lista</td>
+<td>Jakaminen toisten käyttäjien kanssa ja valintojesi muistaminen.</td>
+<td>Cloud Firestore</td>
+</tr>
+<tr>
+<td><strong>Laitteella olevat tiedot</strong>: offline-välimuisti, laitekohtaiset asetukset (esim. supistetut ryhmät) ja kellolle lähetetyn listan koodi</td>
+<td>Toiminta ilman verkkoyhteyttä ja asetusten muistaminen.</td>
+<td>Oma laitteesi</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Tekniset tiedot (kuten IP-osoite ja laitetiedot) siirtyvät väistämättä Googlen palveluille, kun sovellus ottaa yhteyden palvelimeen. Google käsittelee niitä palvelun tarjoamiseksi ja tietoturvan ylläpitoon. Emme itse tallenna tai käytä niitä.</p>
+<h2>3. Mitä emme tee</h2>
 <ul>
-<li>Sovellus ei sisällä mainoksia.</li>
-<li>Sovellus ei käytä analytiikka- tai seurantapalveluita.</li>
-<li>Emme myy tai luovuta tietojasi kolmansille osapuolille markkinointitarkoituksiin.</li>
-<li>Tehtäväsi eivät näy muille käyttäjille. Tietokannan säännöt estävät muita käyttäjiä lukemasta tai muokkaamasta niitä.</li>
-<li>Kehittäjällä on tekninen pääsy tietokantaan palvelun ylläpitoa varten (Firebase-konsoli). Käyttäjien tehtäviä ei selata eikä käytetä muuhun tarkoitukseen, eikä niitä luovuteta kolmansille osapuolille.</li>
+<li>Sovelluksessa ei ole mainoksia, mainonta- tai seurantatunnisteita eikä käyttöanalytiikkaa.</li>
+<li>Emme myy tai vuokraa tietojasi kenellekään.</li>
+<li>Sovellus ei käytä sijaintia, kameraa, mikrofonia, yhteystietoja eikä tiedostojasi. Se pyytää vain internetyhteyden käyttöoikeuden (kellosovellus lisäksi oikeuden pitää laite hetken hereillä).</li>
 </ul>
-
-<h2>Käytetyt palvelut</h2>
-<p>Tietoja käsittelevät Googlen palvelut, jotka toimivat henkilötietojen käsittelijöinä:</p>
+<h2>4. Käsittelyn peruste</h2>
 <ul>
-<li>Firebase Authentication (kirjautuminen)</li>
-<li>Cloud Firestore (tehtävien tallennus ja synkronointi)</li>
+<li>Palvelun tarjoaminen sinulle (sopimus, GDPR 6 artiklan 1 kohdan b alakohta): tunniste ja sisältö.</li>
+<li>Tietoturva ja väärinkäytön esto (oikeutettu etu, f alakohta).</li>
+<li>Google-kirjautuminen: suostumuksesi (a alakohta). Voit perua sen kirjautumalla ulos.</li>
 </ul>
-<p>Googlen tietosuojakäytännöt: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a> ja <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>. Tiedot siirtyvät laitteen ja palvelun välillä salattua yhteyttä käyttäen.</p>
-
-<h2>Tietojen säilytys ja poistaminen</h2>
-<p>Tehtäväsi säilyvät, kunnes poistat ne tai pyydät tietojesi poistoa. Voit poistaa yksittäisiä tehtäviä sovelluksessa. Voit pyytää kaikkien tietojesi (tilitunnus ja tehtävät) poistamista lähettämällä viestin yllä olevaan sähköpostiosoitteeseen. Poistamme tiedot viimeistään 30 päivän kuluessa pyynnöstä. Tarkemmat ohjeet ovat sivulla <a href="poisto.html">tilin ja tietojen poistaminen</a>.</p>
-<p>Laitteelle tallennetut tiedot poistuvat, kun poistat sovelluksen tai sen tiedot laitteelta.</p>
-
-<h2>Oikeutesi</h2>
-<p>Sinulla on EU:n yleisen tietosuoja-asetuksen mukaan oikeus tarkastaa itseäsi koskevat tiedot, oikaista niitä, pyytää niiden poistamista ja siirtää ne toiseen järjestelmään. Voit myös tehdä valituksen tietosuojavaltuutetulle (<a href="https://tietosuoja.fi">tietosuoja.fi</a>).</p>
-
-<h2>Lapset</h2>
-<p>Sovellus ei ole tarkoitettu alle 13-vuotiaille, emmekä tietoisesti kerää heidän tietojaan.</p>
-
-<h2>Muutokset</h2>
-<p>Jos tätä selostetta muutetaan olennaisesti, päivitämme viimeisimmän päivityksen päivämäärän tälle sivulle.</p>
+<h2>5. Kenelle tietoja luovutetaan</h2>
+<ul>
+<li><strong>Muut käyttäjät, joiden kanssa jaat koodin.</strong> Varaston tai ostoslistan koodin tietävä voi liittyä siihen. Jäsenet näkevät sisällön ja voivat muokata ja poistaa sitä. Jäsenten sähköpostiosoitteet tai muut tunnistetiedot eivät näy toisille jäsenille. Jaa koodi vain niille, joille haluat antaa pääsyn.</li>
+<li><strong>Google</strong> (Google Ireland Limited ja Google LLC) tarjoaa palvelut, joilla sovellus toimii: Firebase (Authentication ja Cloud Firestore), Google Play -palvelut, Google-kirjautuminen sekä Wear OS:n tiedonsiirto puhelimen ja kellon välillä. Google toimii henkilötietojen käsittelijänä. Google Play voi lisäksi kerätä sovelluksen kaatumis- ja suorituskykytietoja omien ehtojensa mukaisesti.</li>
+<li>Muille tahoille emme luovuta tietoja, ellei laki sitä edellytä.</li>
+</ul>
+<h2>6. Siirrot EU:n ja ETA:n ulkopuolelle</h2>
+<p>Google voi käsitellä tietoja EU:n ja ETA:n ulkopuolella. Siirroissa Google käyttää omissa ehdoissaan kuvattuja suojatoimia, kuten EU:n vakiosopimuslausekkeita.</p>
+<h2>7. Kuinka kauan tietoja säilytetään</h2>
+<ul>
+<li>Sisältö säilyy, kunnes poistat sen tai pyydät poistoa. Sovelluksessa voit poistua varastosta tai ostoslistasta (se jää muille jäsenille). Luoja voi poistaa sen kaikilta, jolloin sen tuotteet ja rivit poistetaan palvelimelta.</li>
+<li>Anonyymi tunniste ja jäsenyystiedot säilyvät, kunnes pyydät niiden poistoa (ks. kohta 8).</li>
+<li>Laitteella olevat tiedot poistuvat, kun poistat sovelluksen tai tyhjennät sen tiedot. Android voi lisäksi varmuuskopioida sovelluksen paikallisia tietoja puhelimen varmuuskopioasetusten mukaan.</li>
+</ul>
+<h2>8. Oikeutesi ja tietojen poistaminen</h2>
+<p>Sinulla on oikeus saada pääsy tietoihisi, oikaista ne, poistaa ne, rajoittaa niiden käsittelyä, siirtää ne järjestelmästä toiseen ja vastustaa käsittelyä. Voit myös perua antamasi suostumuksen.</p>
+<ul>
+<li>Voit poistaa sisältösi itse sovelluksessa.</li>
+<li>Jos haluat tunnisteesi ja siihen liittyvät tiedot poistettavaksi, lähetä pyyntö osoitteeseen <a href="mailto:tero.lahtinen69@gmail.com">tero.lahtinen69@gmail.com</a>. Jos olet kirjautunut Google-tilillä, lähetä pyyntö samasta sähköpostiosoitteesta, jotta voimme tunnistaa tilisi. Poistamme tiedot 30 päivän kuluessa ja vahvistamme poiston sähköpostilla. Tarkemmat ohjeet: <a href="poisto.html">tietojen poisto</a>. Anonyymi tunniste ei kerro, kuka olet, joten emme voi yhdistää sitä sinuun ilman lisätietoja.</li>
+<li>Jos katsot, että käsittelemme tietojasi lainvastaisesti, voit tehdä valituksen <a href="https://tietosuoja.fi">tietosuojavaltuutetun toimistolle</a>.</li>
+</ul>
+<h2>9. Lapset</h2>
+<p>Sovellus ei ole suunnattu alle 13-vuotiaille, emmekä tietoisesti kerää heidän tietojaan.</p>
+<h2>10. Tietoturva</h2>
+<p>Tiedonsiirto sovelluksen ja palvelimen välillä on salattu. Tietokannan säännöt rajaavat pääsyn vain kyseisen varaston tai ostoslistan jäsenille. Mikään järjestelmä ei ole täysin turvallinen, mutta pyrimme suojaamaan tietosi kohtuullisin keinoin.</p>
+<h2>11. Muutokset</h2>
+<p>Päivitämme tätä selostetta, jos sovellus tai tietojen käsittely muuttuu. Uusin versio on aina tällä sivulla, ja sivun alussa näkyy päivityspäivä.</p>
+<h2>12. Yhteystiedot</h2>
+<p>Kysymykset ja pyynnöt: <a href="mailto:tero.lahtinen69@gmail.com">tero.lahtinen69@gmail.com</a></p>
 
 <hr>
 
 <div id="en" lang="en">
-<h1>My Tasks – privacy policy (summary)</h1>
-<p class="meta">Last updated: 15 October 2026 · <a href="#top">Suomi</a> · <a href="#es">Español</a></p>
-<p>My Tasks (Omat tehtävät) is an Android to-do app. Controller and contact: Tero Lahtinen, <a href="mailto:tero.lahtinen69@gmail.com">tero.lahtinen69@gmail.com</a>.</p>
-<ul>
-<li><strong>Data we process:</strong> when you sign in with Google, Firebase Authentication provides a unique account ID, your email address and name. Your tasks (title, description, due date, repeat, section, done state, timestamps) are stored on your device and in Google Cloud Firestore so they can sync between your devices.</li>
-<li><strong>Reminders</strong> are scheduled and shown entirely on your device.</li>
-<li><strong>No ads, no analytics, no tracking.</strong> We do not sell or share your data for marketing. Your tasks are not visible to other users. The developer has technical access to the database (Firebase console) for maintaining the service, but does not browse, use or share users' tasks for any other purpose.</li>
-<li><strong>Processors:</strong> Google (Firebase Authentication, Cloud Firestore). Data is encrypted in transit.</li>
-<li><strong>Deletion:</strong> you can delete individual tasks in the app. To delete your account and all your data, email the address above; we delete the data within 30 days.</li>
-<li><strong>Children:</strong> the app is not intended for children under 13.</li>
-</ul>
+<h1>Kotivarasto – privacy policy</h1>
+<p class="meta">Last updated 15 October 2026 · <a href="#top">Suomi</a> · <a href="poisto.html#en">Data deletion</a></p>
+
+<p>Kotivarasto is an Android and Wear OS app for keeping track of household supplies and a shopping list. This policy explains what data the app processes, why, and what you can do with your data.</p>
+<h2>1. Controller</h2>
+<p>Tero Lahtinen<br/>Email: <a href="mailto:tero.lahtinen69@gmail.com">tero.lahtinen69@gmail.com</a></p>
+<p>Kotivarasto is developed by an individual.</p>
+<h2>2. What data we process</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Data</th><th>Purpose</th><th>Where it is stored</th></tr></thead>
+<tbody>
+<tr>
+<td><strong>Anonymous user ID</strong></td>
+<td>Created automatically on first launch; you don't have to enter any information. It identifies you so your inventories and shopping lists stay yours. The watch gets its own anonymous ID.</td>
+<td>Firebase Authentication</td>
+</tr>
+<tr>
+<td><strong>Google account email address</strong> (only if you sign in with Google; signing in is optional)</td>
+<td>Links your ID to your Google account so your data can be restored after reinstalling the app or changing phones. The app shows the address only to you. Firebase Authentication may also store other profile information provided by Google during sign-in (for example your name and profile picture); the app does not use it.</td>
+<td>Firebase Authentication</td>
+</tr>
+<tr>
+<td><strong>Content you enter</strong>: names of inventories and shopping lists, items, quantities, units, categories, minimum quantities, and names of purchased items (used for suggestions)</td>
+<td>Making the app work and syncing data between your devices and the members you share with.</td>
+<td>Cloud Firestore</td>
+</tr>
+<tr>
+<td><strong>Sharing data</strong>: the 6-character code of an inventory or list, members' anonymous IDs, the owner, and your selected inventory and list</td>
+<td>Sharing with other users and remembering your selections.</td>
+<td>Cloud Firestore</td>
+</tr>
+<tr>
+<td><strong>Data on your device</strong>: offline cache, device-specific settings (for example collapsed groups) and the list code sent to the watch</td>
+<td>Working without a network connection and remembering settings.</td>
+<td>Your own device</td>
+</tr>
+</tbody>
+</table>
 </div>
-
-<hr>
-
-<div id="es" lang="es">
-<h1>Mis tareas – política de privacidad (resumen)</h1>
-<p class="meta">Última actualización: 15 de octubre de 2026 · <a href="#top">Suomi</a> · <a href="#en">English</a></p>
-<p>Mis tareas (Omat tehtävät) es una aplicación de lista de tareas para Android. Responsable y contacto: Tero Lahtinen, <a href="mailto:tero.lahtinen69@gmail.com">tero.lahtinen69@gmail.com</a>.</p>
+<p>Technical data (such as IP address and device information) is necessarily sent to Google's services when the app connects to the server. Google processes it to provide the service and keep it secure. We do not store or use it ourselves.</p>
+<h2>3. What we don't do</h2>
 <ul>
-<li><strong>Datos que tratamos:</strong> al iniciar sesión con Google, Firebase Authentication proporciona un identificador único de cuenta, tu correo electrónico y tu nombre. Tus tareas (título, descripción, fecha de vencimiento, repetición, sección, estado y marcas de tiempo) se guardan en tu dispositivo y en Google Cloud Firestore para poder sincronizarlas entre tus dispositivos.</li>
-<li><strong>Los recordatorios</strong> se programan y se muestran por completo en tu dispositivo.</li>
-<li><strong>Sin anuncios, sin analítica y sin seguimiento.</strong> No vendemos ni compartimos tus datos con fines de marketing. Tus tareas no son visibles para otros usuarios. El desarrollador tiene acceso técnico a la base de datos (consola de Firebase) para el mantenimiento del servicio, pero no consulta, usa ni comparte las tareas de los usuarios para ningún otro fin.</li>
-<li><strong>Encargados del tratamiento:</strong> Google (Firebase Authentication, Cloud Firestore). Los datos se cifran durante la transmisión.</li>
-<li><strong>Eliminación:</strong> puedes eliminar tareas sueltas en la aplicación. Para eliminar tu cuenta y todos tus datos, escribe al correo indicado arriba; los eliminamos en un plazo de 30 días. Más detalles en <a href="poisto.html">esta página</a>.</li>
-<li><strong>Menores:</strong> la aplicación no está dirigida a menores de 13 años.</li>
+<li>The app has no ads, no advertising or tracking identifiers and no usage analytics.</li>
+<li>We do not sell or rent your data to anyone.</li>
+<li>The app does not use your location, camera, microphone, contacts or files. It only requests permission to use the internet (the watch app also requests permission to keep the device awake briefly).</li>
 </ul>
+<h2>4. Legal basis</h2>
+<ul>
+<li>Providing the service to you (contract, GDPR Art. 6(1)(b)): the ID and your content.</li>
+<li>Security and abuse prevention (legitimate interest, Art. 6(1)(f)).</li>
+<li>Signing in with Google: your consent (Art. 6(1)(a)). You can withdraw it by signing out.</li>
+</ul>
+<h2>5. Who receives data</h2>
+<ul>
+<li><strong>Other users you share a code with.</strong> Anyone who knows the code of an inventory or shopping list can join it. Members can see, edit and delete its content. Members' email addresses and other identifying details are not shown to other members. Share the code only with people you want to give access to.</li>
+<li><strong>Google</strong> (Google Ireland Limited and Google LLC) provides the services the app runs on: Firebase (Authentication and Cloud Firestore), Google Play services, Sign in with Google, and Wear OS data transfer between phone and watch. Google acts as a processor of personal data. Google Play may also collect crash and performance data under its own terms.</li>
+<li>We do not disclose data to anyone else unless required by law.</li>
+</ul>
+<h2>6. Transfers outside the EU/EEA</h2>
+<p>Google may process data outside the EU/EEA. For such transfers Google relies on safeguards described in its own terms, such as the EU Standard Contractual Clauses.</p>
+<h2>7. Retention</h2>
+<ul>
+<li>Content is kept until you delete it or ask us to delete it. In the app you can leave an inventory or shopping list (it remains for the other members). Its creator can delete it for everyone, which removes its items and rows from the server.</li>
+<li>The anonymous ID and membership data are kept until you ask for their deletion (see section 8).</li>
+<li>Data on your device is removed when you uninstall the app or clear its data. Android may also back up the app's local data according to your phone's backup settings.</li>
+</ul>
+<h2>8. Your rights and deleting your data</h2>
+<p>You have the right to access your data, rectify it, erase it, restrict its processing, receive it in a portable format and object to processing. You can also withdraw any consent you have given.</p>
+<ul>
+<li>You can delete your content yourself in the app.</li>
+<li>To have your ID and related data deleted, email <a href="mailto:tero.lahtinen69@gmail.com">tero.lahtinen69@gmail.com</a>. If you signed in with Google, send the request from the same email address so we can identify your account. We delete the data within 30 days and confirm by email. See the <a href="poisto.html#en">data deletion instructions</a>. An anonymous ID does not tell us who you are, so we cannot link it to you without additional information.</li>
+<li>If you believe we process your data unlawfully, you can lodge a complaint with the <a href="https://tietosuoja.fi/en">Finnish Data Protection Ombudsman</a> or your local supervisory authority.</li>
+</ul>
+<h2>9. Children</h2>
+<p>The app is not directed at children under 13 and we do not knowingly collect their data.</p>
+<h2>10. Security</h2>
+<p>Data in transit between the app and the server is encrypted. Database rules restrict access to the members of the inventory or list concerned. No system is completely secure, but we protect your data by reasonable means.</p>
+<h2>11. Changes</h2>
+<p>We update this policy if the app or its data processing changes. The latest version is always on this page, with the update date at the top.</p>
+<h2>12. Contact</h2>
+<p>Questions and requests: <a href="mailto:tero.lahtinen69@gmail.com">tero.lahtinen69@gmail.com</a></p>
 </div>
 </body>
 </html>

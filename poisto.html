@@ -3,50 +3,82 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Omat tehtävät – tilin ja tietojen poistaminen</title>
+<title>Kotivarasto – tietojen ja tilin poisto</title>
 <style>
   body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6;max-width:42rem;margin:0 auto;padding:1.5rem 1rem 3rem;color:#1b1b1f;background:#fff}
   h1{font-size:1.7rem;margin-bottom:.2rem}
   h2{font-size:1.2rem;margin-top:2rem}
+  .meta{color:#555}
   a{color:#1a5fd6}
-  @media (prefers-color-scheme:dark){body{background:#121316;color:#e4e4e8}a{color:#8ab4ff}}
+  .table-wrap{overflow-x:auto}
+  table{border-collapse:collapse;width:100%;min-width:34rem;font-size:.95rem}
+  th,td{text-align:left;vertical-align:top;padding:.5rem .6rem;border-bottom:1px solid #ccc}
+  @media (prefers-color-scheme:dark){body{background:#121316;color:#e4e4e8}.meta{color:#aaa}a{color:#8ab4ff}th,td{border-bottom-color:#3a3c42}}
 </style>
 </head>
 <body>
-<h1>Omat tehtävät – tilin ja tietojen poistaminen</h1>
-<p>Sovellus: <strong>Omat tehtävät</strong> (Android) · Kehittäjä: Tero Lahtinen</p>
+<h1 id="top">Kotivarasto – tietojen ja tilin poisto</h1>
+<p class="meta">Päivitetty 15.10.2026 · <a href="#en">English</a></p>
 
-<h2>Näin pyydät tietojesi poistamista</h2>
-<ol>
-<li>Lähetä sähköpostia osoitteeseen <a href="mailto:tero.lahtinen69@gmail.com?subject=Omat%20tehtävät%20–%20tietojen%20poisto">tero.lahtinen69@gmail.com</a> otsikolla <em>Omat tehtävät – tietojen poisto</em>.</li>
-<li>Lähetä viesti samasta sähköpostiosoitteesta, jolla kirjaudut sovellukseen Google-tilillä, jotta voimme tunnistaa tietosi.</li>
-<li>Vahvistamme poiston sähköpostilla, kun se on tehty. Poisto tehdään viimeistään 30 päivän kuluessa pyynnöstä.</li>
-</ol>
-
-<h2>Mitä tietoja poistetaan</h2>
+<p>Tällä sivulla kerrotaan, miten voit poistaa Kotivarasto-sovelluksen tietosi. Sovelluksen kehittäjä on Tero Lahtinen. Katso myös <a href="index.html">tietosuojaseloste</a>.</p>
+<h2>1. Poista sisältö itse sovelluksessa</h2>
 <ul>
-<li>Google-tilisi tunnus, sähköpostiosoite ja nimi, jotka Firebase Authentication on tallentanut</li>
-<li>Kaikki tehtäväsi (otsikko, kuvaus, eräpäivä, toisto, osio, valmiustila) Cloud Firestore -tietokannasta</li>
+<li>Voit poistaa tuotteita ja rivejä suoraan varastosta ja ostoslistasta.</li>
+<li>Voit poistua varastosta tai ostoslistasta asetuksista (se jää muille jäsenille). Varaston tai listan luoja voi poistaa sen kaikilta, jolloin sen tuotteet ja rivit poistetaan palvelimelta.</li>
 </ul>
-
-<h2>Mitä tietoja säilytetään</h2>
-<p>Poiston jälkeen emme säilytä mitään näistä tiedoista. Googlen palvelimilla olevat varmuuskopiot poistuvat Googlen omien käytäntöjen mukaan, yleensä muutaman kuukauden kuluessa.</p>
-
-<h2>Laitteella olevat tiedot</h2>
-<p>Laitteella oleva kopio tehtävistä poistuu, kun poistat sovelluksen tai sen tiedot laitteelta (Asetukset &gt; Sovellukset &gt; Omat tehtävät &gt; Tallennustila &gt; Tyhjennä tiedot). Voit myös poistaa yksittäisiä tehtäviä sovelluksessa; poistetut tehtävät häviävät pilvestä synkronoinnin yhteydessä.</p>
+<h2>2. Pyydä tilin ja kaikkien tietojen poistoa</h2>
+<ol>
+<li>Lähetä sähköpostia osoitteeseen <a href="mailto:tero.lahtinen69@gmail.com?subject=Kotivarasto%20%E2%80%93%20poistopyynt%C3%B6">tero.lahtinen69@gmail.com</a> otsikolla <em>Kotivarasto – poistopyyntö</em>.</li>
+<li>Jos olet kirjautunut sovellukseen Google-tilillä, lähetä viesti <strong>samasta sähköpostiosoitteesta</strong>, jolla kirjaudut, jotta voimme tunnistaa tilisi.</li>
+<li>Poistamme tietosi <strong>30 päivän kuluessa</strong> ja vahvistamme poiston sähköpostilla.</li>
+</ol>
+<h2>3. Mitä poistetaan</h2>
+<ul>
+<li>Firebase Authentication -tilisi tiedot: käyttäjätunniste, sähköpostiosoite ja muut Googlen kirjautumisessa antamat profiilitiedot.</li>
+<li>Jäsenyys- ja valintatietosi (mitkä varastot ja ostoslistat sinulla on).</li>
+<li>Varastot ja ostoslistat, joissa olet ainoa jäsen, tuotteineen ja riveineen.</li>
+<li>Sinut poistetaan jäsenenä jaetuista varastoista ja ostoslistoista. Muiden jäsenten käytössä oleva sisältö jää heille. Jos haluat jaetun varaston tai listan poistettavaksi kaikilta, voit tehdä sen luojana sovelluksessa tai mainita siitä poistopyynnössä.</li>
+</ul>
+<h2>4. Mitä säilyy</h2>
+<p>Mitään ei säilytetä poistopyynnön jälkeen. Googlen järjestelmien varmuuskopiot vanhenevat Googlen omien käytäntöjen mukaan, yleensä muutamassa kuukaudessa.</p>
+<h2>5. Jos et ole kirjautunut Google-tilillä</h2>
+<p>Anonyymi tunniste ei kerro, kuka olet, joten emme voi tunnistaa sitä sinuun sähköpostilla. Poista tällöin sisältösi sovelluksessa (kohta 1). Sen jälkeen tunnisteeseesi ei jää sisältöä.</p>
+<h2>6. Laitteella olevat tiedot</h2>
+<p>Laitteen välimuisti ja asetukset poistuvat, kun poistat sovelluksen tai tyhjennät sen tiedot. Sovelluksessa poistettu sisältö poistuu myös pilvestä, kun laite synkronoi.</p>
 
 <p><a href="index.html">Tietosuojaseloste</a></p>
 
 <hr>
-<div lang="en">
-<h1>My Tasks – deleting your account and data</h1>
-<p>App: <strong>My Tasks (Omat tehtävät)</strong> (Android) · Developer: Tero Lahtinen</p>
-<p>To request deletion of your account and all associated data, email <a href="mailto:tero.lahtinen69@gmail.com">tero.lahtinen69@gmail.com</a> from the address you use to sign in with Google, with the subject “Omat tehtävät – data deletion”. We delete your data within 30 days and confirm by email.</p>
+
+<div id="en" lang="en">
+<h1>Kotivarasto – data and account deletion</h1>
+<p class="meta">Last updated 15 October 2026 · <a href="#top">Suomi</a></p>
+
+<p>This page explains how to delete your data from the Kotivarasto app. The app is developed by Tero Lahtinen. See also the <a href="index.html#en">privacy policy</a>.</p>
+<h2>1. Delete content yourself in the app</h2>
 <ul>
-<li><strong>Deleted:</strong> your account ID, email address and name (Firebase Authentication) and all your tasks (Cloud Firestore).</li>
-<li><strong>Retained:</strong> nothing. Google's backups expire according to Google's own policies, usually within a few months.</li>
-<li>Data on your device is removed when you uninstall the app or clear its data.</li>
+<li>You can delete items and rows directly in the inventory and shopping list.</li>
+<li>You can leave an inventory or shopping list from the settings (it remains for the other members). The creator of an inventory or list can delete it for everyone, which removes its items and rows from the server.</li>
 </ul>
+<h2>2. Request deletion of your account and all data</h2>
+<ol>
+<li>Email <a href="mailto:tero.lahtinen69@gmail.com?subject=Kotivarasto%20%E2%80%93%20deletion%20request">tero.lahtinen69@gmail.com</a> with the subject <em>Kotivarasto – deletion request</em>.</li>
+<li>If you signed in to the app with Google, send the message from the <strong>same email address</strong> you sign in with so we can identify your account.</li>
+<li>We delete your data <strong>within 30 days</strong> and confirm by email.</li>
+</ol>
+<h2>3. What is deleted</h2>
+<ul>
+<li>Your Firebase Authentication account data: user ID, email address and any other profile information Google provided during sign-in.</li>
+<li>Your membership and selection data (which inventories and shopping lists you have).</li>
+<li>Inventories and shopping lists where you are the only member, including their items and rows.</li>
+<li>You are removed as a member of shared inventories and lists. Content that other members use remains for them. If you want a shared inventory or list deleted for everyone, you can do so as its creator in the app or mention it in your request.</li>
+</ul>
+<h2>4. What is kept</h2>
+<p>Nothing is kept after the deletion request. Backups in Google's systems expire under Google's own policies, usually within a few months.</p>
+<h2>5. If you have not signed in with Google</h2>
+<p>An anonymous ID does not tell us who you are, so we cannot link it to you by email. In that case delete your content in the app (section 1). After that no content remains linked to your ID.</p>
+<h2>6. Data on your device</h2>
+<p>The device cache and settings are removed when you uninstall the app or clear its data. Content deleted in the app is also removed from the cloud when the device syncs.</p>
 </div>
 </body>
 </html>
